@@ -12,7 +12,8 @@
     "allowJs": true,
     "rootDir": "src",
     "outDir": "dist",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "noEmitOnError": false
   },
   "include": ["src/**/*", ".env"]
 }
