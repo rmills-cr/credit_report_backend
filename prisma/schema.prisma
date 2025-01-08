@@ -1,0 +1,121 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  user_id                         String          @id @default(uuid()) @unique
+  user_ind                        String
+
+  first_name                      String
+  last_name                       String
+  email                           String          @unique
+  password                        String
+  avatar                          String?
+  user_role                       Role
+  email_verified                  Boolean         @default(false)
+  phone_number                    String?
+
+  profiles                        Profile[]
+  status_updater                  Profile[]       @relation("status_updater_ref")
+  business                        Business[]
+
+  created_at                      Decimal
+  updated_at                      Decimal
+}
+
+enum Role {
+  admin
+  single_user
+  business_user
+}
+
+model Profile {
+  profile_id                      String          @id @default(uuid()) @unique
+  profile_ind                     String
+
+  user                            User            @relation(fields: [user_id], references: [user_id])
+  user_id                         String
+
+  status                          ProfileStatus   @default(active)
+
+  status_updater                  User?           @relation("status_updater_ref", fields: [status_updater_id], references: [user_id])
+  status_updater_id               String?     
+
+  // this informations are for manually created profiles (by BUSINESS USERS)
+  first_name                      String?
+  last_name                       String?
+  email                           String?         @unique
+  phone_number                    String?
+  credit_score                    Float?
+
+  credit_reports                  CreditReport[]
+  dispute_letter                  DisputeLetter[]
+
+
+  created_at                      Decimal
+  updated_at                      Decimal
+}
+
+enum ProfileStatus {
+  active
+  in_active
+}
+
+model Business {
+  business_id                     String          @id @default(uuid()) @unique
+  business_ind                    String
+
+  business_name                   String
+  business_address                String
+  avatar                          String
+
+  is_verified                     Boolean         @default(false)
+
+  user                            User            @relation(fields: [user_id], references: [user_id])
+  user_id                         String
+  
+
+  created_at                      Decimal
+  updated_at                      Decimal
+}
+
+model CreditReport {
+  credit_report_id                String          @id @default(uuid()) @unique
+  credit_report_ind               String
+
+  profile                         Profile         @relation(fields: [profile_id], references: [profile_id])
+  profile_id                      String          @unique
+
+  report_data                     String
+  
+
+  created_at                      Decimal
+  updated_at                      Decimal
+}
+
+model DisputeLetter  {
+  dispute_letter_id               String          @id @default(uuid()) @unique
+  dispute_letter_ind              String
+
+  profile                         Profile         @relation(fields: [profile_id], references: [profile_id])
+  profile_id                      String
+
+  letter_content                  String
+
+  status                          LetterStatus    @default(sent)
+
+  created_at                      Decimal
+  updated_at                      Decimal
+}
+
+enum LetterStatus {
+  sent
+  in_progress
+  resolved
+  closed
+}
