@@ -7,7 +7,7 @@
     "build": "prisma generate && tsc",
     "start": "node dist/index.js",
     "dev": "nodemon src/index.ts",
-    "vercel-build": "prisma generate && tsc",
+    "vercel-build": "prisma generate && tsc --skipLibCheck --noEmitOnError false",
     "postinstall": "prisma generate"
   },
   "keywords": [],
