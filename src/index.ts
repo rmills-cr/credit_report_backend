@@ -31,8 +31,7 @@ if (process.env.NODE_ENV !== "production") {
   const PORT = process.env.PORT || 4500;
   server.listen(PORT, () => {
     console.log(
-      `Credit Resolution App server started and running on port ${PORT}`.cyan
-        .bold
+      `Credit Resolution App server started and running on port ${PORT}`
     );
   });
 } else {
