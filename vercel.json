@@ -4,28 +4,13 @@
     {
       "src": "dist/index.js",
       "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "50mb",
-        "includeFiles": ["dist/**"]
-      }
+      "config": { "includeFiles": ["dist/**"] }
     }
   ],
   "routes": [
     {
-      "src": "/socket.io/(.*)",
-      "dest": "dist/index.js"
-    },
-    {
-      "src": "/api/v1/app/(.*)",
-      "dest": "dist/index.js"
-    },
-    {
       "src": "/(.*)",
       "dest": "dist/index.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  },
-  "buildCommand": "pnpm build"
+  ]
 }
