@@ -1,18 +1,16 @@
-import nodemailer from 'nodemailer'
-import { email_passowrd, email_username } from './constants';
+import nodemailer from "nodemailer";
+import { email_passowrd, email_username } from "./constants";
 
+export const admin_welcome_mail_messenger = (admin: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const admin_welcome_mail_messenger = (admin:any) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -78,37 +76,36 @@ export const admin_welcome_mail_messenger = (admin:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: admin.email,
-        subject: "Credit Mend: Welcome Admin",
-        html: htmlContent,
-        text: 'Welcome Admin'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: admin.email,
+    subject: "Credit Mend: Welcome Admin",
+    html: htmlContent,
+    text: "Welcome Admin",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Email sent to ${admin.email}`.cyan.bold);
-        }
-    });
-
-}
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Email sent to ${admin.email}`.cyan.bold);
+    }
+  });
+};
 
 export const single_user_welcome_mail_messenger = (user: any) => {
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -168,36 +165,36 @@ export const single_user_welcome_mail_messenger = (user: any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Welcome!",
-        html: htmlContent,
-        text: 'Welcome to Credit Mend'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Welcome!",
+    html: htmlContent,
+    text: "Welcome to Credit Mend",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Email sent to ${user.email}`.cyan.bold);
-        }
-    });
-}
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
 
 export const business_user_welcome_mail_messenger = (user: any) => {
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -263,38 +260,36 @@ export const business_user_welcome_mail_messenger = (user: any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Welcome to Business Suite",
-        html: htmlContent,
-        text: 'Welcome to Credit Mend Business'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Welcome to Business Suite",
+    html: htmlContent,
+    text: "Welcome to Credit Mend Business",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Email sent to ${user.email}`.cyan.bold);
-        }
-    });
-}
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
 
+export const notify_admin_of_new_staff = (staff: any, adminEmail: string) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const notify_admin_of_new_staff = (staff:any, adminEmail:string) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -353,38 +348,36 @@ export const notify_admin_of_new_staff = (staff:any, adminEmail:string) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: adminEmail,
-        subject: "Credit Mend: New Staff Registration",
-        html: htmlContent,
-        text: 'New Staff Registration'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: adminEmail,
+    subject: "Credit Mend: New Staff Registration",
+    html: htmlContent,
+    text: "New Staff Registration",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Notification email sent to admin ${adminEmail}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Notification email sent to admin ${adminEmail}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const welcome_mail_messanger = (user: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const welcome_mail_messanger = (user:any,) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -452,38 +445,36 @@ export const welcome_mail_messanger = (user:any,) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Welcome",
-        html: htmlContent,
-        text: 'Welcome'
-    };
-    
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Email sent to ${user.email}`.cyan.bold);
-        }
-    });
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Welcome",
+    html: htmlContent,
+    text: "Welcome",
+  };
 
-}
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
 
-export const staff_account_approval_mail = (staff:any) => {
+export const staff_account_approval_mail = (staff: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -549,38 +540,36 @@ export const staff_account_approval_mail = (staff:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: staff.email,
-        subject: "Credit Mend: Account Approved",
-        html: htmlContent,
-        text: 'Account Approved'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: staff.email,
+    subject: "Credit Mend: Account Approved",
+    html: htmlContent,
+    text: "Account Approved",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Approval email sent to ${staff.email}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Approval email sent to ${staff.email}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const staff_account_deletion_mail = (staff: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const staff_account_deletion_mail = (staff:any) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -637,38 +626,36 @@ export const staff_account_deletion_mail = (staff:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: staff.email,
-        subject: "Credit Mend: Account Deletion Notice",
-        html: htmlContent,
-        text: 'Account Deletion Notice'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: staff.email,
+    subject: "Credit Mend: Account Deletion Notice",
+    html: htmlContent,
+    text: "Account Deletion Notice",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Account deletion email sent to ${staff.email}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Account deletion email sent to ${staff.email}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const user_account_suspension_mail = (user: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const user_account_suspension_mail = (user:any) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -725,38 +712,36 @@ export const user_account_suspension_mail = (user:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Account Suspension Notice",
-        html: htmlContent,
-        text: 'Account Suspension Notice'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Account Suspension Notice",
+    html: htmlContent,
+    text: "Account Suspension Notice",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Suspension email sent to ${user.email}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Suspension email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const user_account_unsuspension_mail = (user: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const user_account_unsuspension_mail = (user:any) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -813,38 +798,36 @@ export const user_account_unsuspension_mail = (user:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Account Unsuspension Notice",
-        html: htmlContent,
-        text: 'Account Unsuspension Notice'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Account Unsuspension Notice",
+    html: htmlContent,
+    text: "Account Unsuspension Notice",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Unsuspension email sent to ${user.email}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Unsuspension email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const staff_role_change_mail = (staff: any, newRole: string) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const staff_role_change_mail = (staff:any, newRole:string) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -888,7 +871,10 @@ export const staff_role_change_mail = (staff:any, newRole:string) => {
                 <h1>Role Change Notification</h1>
                 <p>Dear ${staff.first_name},</p>
                 
-                <p>We wanted to inform you that your role within Credit Mend has been updated. Your new role is: <strong>${newRole.replace(/_/g, " ")}</strong>.</p>
+                <p>We wanted to inform you that your role within Credit Mend has been updated. Your new role is: <strong>${newRole.replace(
+                  /_/g,
+                  " "
+                )}</strong>.</p>
                 
                 <p>This change may affect your access and responsibilities on the platform. If you have any questions about your new role or need further clarification, please do not hesitate to contact us at <a href="mailto:support@creditmend.com">support@creditmend.com</a>.</p>
                 
@@ -901,38 +887,36 @@ export const staff_role_change_mail = (staff:any, newRole:string) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: staff.email,
-        subject: "Credit Mend: Role Change Notification",
-        html: htmlContent,
-        text: 'Role Change Notification'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: staff.email,
+    subject: "Credit Mend: Role Change Notification",
+    html: htmlContent,
+    text: "Role Change Notification",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Role change email sent to ${staff.email}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Role change email sent to ${staff.email}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const otp_messanger = (user: any, otp: string) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const otp_messanger = (user:any, otp: string) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
     
     <!DOCTYPE html>
     <html lang="en">
@@ -981,45 +965,42 @@ export const otp_messanger = (user:any, otp: string) => {
             <strong>One Time Password (OTP)</strong>
             <p><b>${otp}</b></p>
             <p>This code expires in 20 minutes and should only be used in-app. Do not click any links or share with anybody.</p>
-            <p>If you didn’t attempt to register on Credit Repair App, please change your password immediately to protect your account. For further assistance, contact us at <a href="mailto:iroegbu.dg@gmail.com">iroegbu.dg@gmail.com</a>.</p>
+            <p>If you didn’t attempt to register on Credit Repair App, please change your password immediately to protect your account. For further assistance, contact us at <a href="mailto:support@creditmend.com">support@creditmend.com</a>.</p>
             <p>Need help, or have questions? Please visit our <a href="#">contact us page</a> or reply to this message.</p>
         </div>
     </body>
     </html>
-    `
-    const mailOptions = {
-        from: {
-            name: "crm",
-            address: 'iroegbu.dg@gmail.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Verify your account",
-        html: htmlContent,
-        text: 'Welcome'
-    };
-    
+    `;
+  const mailOptions = {
+    from: {
+      name: "crm",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Verify your account",
+    html: htmlContent,
+    text: "Welcome",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Email sent to ${user.email} `.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Email sent to ${user.email} `.cyan.bold);
+    }
+  });
+};
 
-}
+export const account_deactivation_mail = (user: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const account_deactivation_mail = (user:any) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -1072,38 +1053,36 @@ export const account_deactivation_mail = (user:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Account Deactivated",
-        html: htmlContent,
-        text: 'Account Deactivated'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Account Deactivated",
+    html: htmlContent,
+    text: "Account Deactivated",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Deactivation email sent to ${user.email}`.cyan.bold);
-        }
-    });
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Deactivation email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
 
-}
+export const account_activation_mail = (user: any) => {
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: email_username,
+      pass: email_passowrd,
+    },
+  });
 
-export const account_activation_mail = (user:any) => {
-
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: email_username,
-            pass: email_passowrd
-        }
-    });
-
-    const htmlContent = `
+  const htmlContent = `
         <!DOCTYPE html>
         <html lang="en">
         <head>
@@ -1161,23 +1140,22 @@ export const account_activation_mail = (user:any) => {
         </html>
     `;
 
-    const mailOptions = {
-        from: {
-            name: "Credit Mend",
-            address: 'support@creditmend.com'
-        },
-        to: user.email,
-        subject: "Credit Mend: Account Activated",
-        html: htmlContent,
-        text: 'Account Activated'
-    };
+  const mailOptions = {
+    from: {
+      name: "Credit Mend",
+      address: "support@creditmend.com",
+    },
+    to: user.email,
+    subject: "Credit Mend: Account Activated",
+    html: htmlContent,
+    text: "Account Activated",
+  };
 
-    transporter.sendMail(mailOptions, function(error, info) {
-        if (error) {
-            console.log(error);
-        } else {
-            console.log(`Activation email sent to ${user.email}`.cyan.bold);
-        }
-    });
-
-}
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(`Activation email sent to ${user.email}`.cyan.bold);
+    }
+  });
+};
