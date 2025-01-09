@@ -28,8 +28,7 @@ if (process.env.NODE_ENV !== "production") {
     // Start server for development
     const PORT = process.env.PORT || 4500;
     server.listen(PORT, () => {
-        console.log(`Credit Resolution App server started and running on port ${PORT}`.cyan
-            .bold);
+        console.log(`Credit Resolution App server started and running on port ${PORT}`);
     });
 }
 else {
@@ -47,6 +46,15 @@ app.use((0, cors_1.default)(constants_1.CORS_OPTION));
 app.use(body_parser_1.default.urlencoded({ extended: false }));
 app.use(body_parser_1.default.json());
 app.use(network_availability_1.default);
+// Root route for health check
+app.get("/", (req, res) => {
+    res.json({
+        status: "success",
+        message: "Server is up and running",
+        timestamp: new Date().toISOString(),
+        environment: process.env.NODE_ENV || "development",
+    });
+});
 // Routes
 app.use("/api/v1/app", index_1.default);
 app.use(not_found_1.default);

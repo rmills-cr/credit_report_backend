@@ -51,6 +51,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(check_network_availability);
 
+// Root route for health check
+app.get("/", (req, res) => {
+  res.json({
+    status: "success",
+    message: "Server is up and running",
+    timestamp: new Date().toISOString(),
+    environment: process.env.NODE_ENV || "development",
+  });
+});
+
 // Routes
 app.use("/api/v1/app", index);
 app.use(not_found);
