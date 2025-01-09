@@ -5,9 +5,14 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "nodemon src/index.ts",
-    "build": "nodemon src/index.ts",
+    "build": "rimraf dist && prisma generate && tsc ",
+    "add-build": "git add dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "build",
+    "add-build"
+  ],
   "keywords": [],
   "author": "",
   "license": "ISC",
