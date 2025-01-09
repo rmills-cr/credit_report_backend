@@ -91,7 +91,7 @@ export const admin_welcome_mail_messenger = (admin: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Email sent to ${admin.email}`.cyan.bold);
+      console.log(`Email sent to ${admin.email}`);
     }
   });
 };
@@ -180,7 +180,7 @@ export const single_user_welcome_mail_messenger = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Email sent to ${user.email}`.cyan.bold);
+      console.log(`Email sent to ${user.email}`);
     }
   });
 };
@@ -275,7 +275,7 @@ export const business_user_welcome_mail_messenger = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Email sent to ${user.email}`.cyan.bold);
+      console.log(`Email sent to ${user.email}`);
     }
   });
 };
@@ -363,7 +363,7 @@ export const notify_admin_of_new_staff = (staff: any, adminEmail: string) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Notification email sent to admin ${adminEmail}`.cyan.bold);
+      console.log(`Notification email sent to admin ${adminEmail}`);
     }
   });
 };
@@ -460,7 +460,7 @@ export const welcome_mail_messanger = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Email sent to ${user.email}`.cyan.bold);
+      console.log(`Email sent to ${user.email}`);
     }
   });
 };
@@ -555,7 +555,7 @@ export const staff_account_approval_mail = (staff: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Approval email sent to ${staff.email}`.cyan.bold);
+      console.log(`Approval email sent to ${staff.email}`);
     }
   });
 };
@@ -641,7 +641,7 @@ export const staff_account_deletion_mail = (staff: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Account deletion email sent to ${staff.email}`.cyan.bold);
+      console.log(`Account deletion email sent to ${staff.email}`);
     }
   });
 };
@@ -727,7 +727,7 @@ export const user_account_suspension_mail = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Suspension email sent to ${user.email}`.cyan.bold);
+      console.log(`Suspension email sent to ${user.email}`);
     }
   });
 };
@@ -813,7 +813,7 @@ export const user_account_unsuspension_mail = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Unsuspension email sent to ${user.email}`.cyan.bold);
+      console.log(`Unsuspension email sent to ${user.email}`);
     }
   });
 };
@@ -902,7 +902,7 @@ export const staff_role_change_mail = (staff: any, newRole: string) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Role change email sent to ${staff.email}`.cyan.bold);
+      console.log(`Role change email sent to ${staff.email}`);
     }
   });
 };
@@ -986,7 +986,7 @@ export const otp_messanger = (user: any, otp: string) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Email sent to ${user.email} `.cyan.bold);
+      console.log(`Email sent to ${user.email} `);
     }
   });
 };
@@ -1068,7 +1068,7 @@ export const account_deactivation_mail = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Deactivation email sent to ${user.email}`.cyan.bold);
+      console.log(`Deactivation email sent to ${user.email}`);
     }
   });
 };
@@ -1155,7 +1155,7 @@ export const account_activation_mail = (user: any) => {
     if (error) {
       console.log(error);
     } else {
-      console.log(`Activation email sent to ${user.email}`.cyan.bold);
+      console.log(`Activation email sent to ${user.email}`);
     }
   });
 };
