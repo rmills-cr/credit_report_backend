@@ -15,10 +15,33 @@ exports.jwt_lifetime = process.env.JWT_LIFETIME;
 exports.email_username = process.env.EMAIL_USERNAME;
 exports.email_passowrd = process.env.EMAIL_PASSWORD;
 exports.pass_phrase = process.env.PASSPHRASE;
+const allowedOrigins = [
+    "https://credit-repair-client.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:4500",
+];
 exports.CORS_OPTION = {
-    origin: "*",
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) {
+            return callback(null, true);
+        }
+        if (allowedOrigins.includes(origin)) {
+            callback(null, true);
+        }
+        else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
     credentials: true,
-    exposedHeaders: ['x-id-key'],
-    optionsSuccessStatus: 200
+    exposedHeaders: ["x-id-key"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+        "Content-Type",
+        "Authorization",
+        "X-Requested-With",
+        "x-id-key",
+    ],
+    optionsSuccessStatus: 204,
 };
 //# sourceMappingURL=constants.js.map

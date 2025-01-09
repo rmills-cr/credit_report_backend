@@ -8,11 +8,11 @@ const nodemailer_1 = __importDefault(require("nodemailer"));
 const constants_1 = require("./constants");
 const admin_welcome_mail_messenger = (admin) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -82,12 +82,12 @@ const admin_welcome_mail_messenger = (admin) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: admin.email,
         subject: "Credit Mend: Welcome Admin",
         html: htmlContent,
-        text: 'Welcome Admin'
+        text: "Welcome Admin",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -101,11 +101,11 @@ const admin_welcome_mail_messenger = (admin) => {
 exports.admin_welcome_mail_messenger = admin_welcome_mail_messenger;
 const single_user_welcome_mail_messenger = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -169,12 +169,12 @@ const single_user_welcome_mail_messenger = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Welcome!",
         html: htmlContent,
-        text: 'Welcome to Credit Mend'
+        text: "Welcome to Credit Mend",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -188,11 +188,11 @@ const single_user_welcome_mail_messenger = (user) => {
 exports.single_user_welcome_mail_messenger = single_user_welcome_mail_messenger;
 const business_user_welcome_mail_messenger = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -262,12 +262,12 @@ const business_user_welcome_mail_messenger = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Welcome to Business Suite",
         html: htmlContent,
-        text: 'Welcome to Credit Mend Business'
+        text: "Welcome to Credit Mend Business",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -281,11 +281,11 @@ const business_user_welcome_mail_messenger = (user) => {
 exports.business_user_welcome_mail_messenger = business_user_welcome_mail_messenger;
 const notify_admin_of_new_staff = (staff, adminEmail) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -348,12 +348,12 @@ const notify_admin_of_new_staff = (staff, adminEmail) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: adminEmail,
         subject: "Credit Mend: New Staff Registration",
         html: htmlContent,
-        text: 'New Staff Registration'
+        text: "New Staff Registration",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -367,11 +367,11 @@ const notify_admin_of_new_staff = (staff, adminEmail) => {
 exports.notify_admin_of_new_staff = notify_admin_of_new_staff;
 const welcome_mail_messanger = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -443,12 +443,12 @@ const welcome_mail_messanger = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Welcome",
         html: htmlContent,
-        text: 'Welcome'
+        text: "Welcome",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -462,11 +462,11 @@ const welcome_mail_messanger = (user) => {
 exports.welcome_mail_messanger = welcome_mail_messanger;
 const staff_account_approval_mail = (staff) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -536,12 +536,12 @@ const staff_account_approval_mail = (staff) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: staff.email,
         subject: "Credit Mend: Account Approved",
         html: htmlContent,
-        text: 'Account Approved'
+        text: "Account Approved",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -555,11 +555,11 @@ const staff_account_approval_mail = (staff) => {
 exports.staff_account_approval_mail = staff_account_approval_mail;
 const staff_account_deletion_mail = (staff) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -620,12 +620,12 @@ const staff_account_deletion_mail = (staff) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: staff.email,
         subject: "Credit Mend: Account Deletion Notice",
         html: htmlContent,
-        text: 'Account Deletion Notice'
+        text: "Account Deletion Notice",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -639,11 +639,11 @@ const staff_account_deletion_mail = (staff) => {
 exports.staff_account_deletion_mail = staff_account_deletion_mail;
 const user_account_suspension_mail = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -704,12 +704,12 @@ const user_account_suspension_mail = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Account Suspension Notice",
         html: htmlContent,
-        text: 'Account Suspension Notice'
+        text: "Account Suspension Notice",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -723,11 +723,11 @@ const user_account_suspension_mail = (user) => {
 exports.user_account_suspension_mail = user_account_suspension_mail;
 const user_account_unsuspension_mail = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -788,12 +788,12 @@ const user_account_unsuspension_mail = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Account Unsuspension Notice",
         html: htmlContent,
-        text: 'Account Unsuspension Notice'
+        text: "Account Unsuspension Notice",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -807,11 +807,11 @@ const user_account_unsuspension_mail = (user) => {
 exports.user_account_unsuspension_mail = user_account_unsuspension_mail;
 const staff_role_change_mail = (staff, newRole) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -872,12 +872,12 @@ const staff_role_change_mail = (staff, newRole) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: staff.email,
         subject: "Credit Mend: Role Change Notification",
         html: htmlContent,
-        text: 'Role Change Notification'
+        text: "Role Change Notification",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -891,11 +891,11 @@ const staff_role_change_mail = (staff, newRole) => {
 exports.staff_role_change_mail = staff_role_change_mail;
 const otp_messanger = (user, otp) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
     
@@ -946,7 +946,7 @@ const otp_messanger = (user, otp) => {
             <strong>One Time Password (OTP)</strong>
             <p><b>${otp}</b></p>
             <p>This code expires in 20 minutes and should only be used in-app. Do not click any links or share with anybody.</p>
-            <p>If you didn’t attempt to register on Credit Repair App, please change your password immediately to protect your account. For further assistance, contact us at <a href="mailto:iroegbu.dg@gmail.com">iroegbu.dg@gmail.com</a>.</p>
+            <p>If you didn’t attempt to register on Credit Repair App, please change your password immediately to protect your account. For further assistance, contact us at <a href="mailto:support@creditmend.com">support@creditmend.com</a>.</p>
             <p>Need help, or have questions? Please visit our <a href="#">contact us page</a> or reply to this message.</p>
         </div>
     </body>
@@ -955,12 +955,12 @@ const otp_messanger = (user, otp) => {
     const mailOptions = {
         from: {
             name: "crm",
-            address: 'iroegbu.dg@gmail.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Verify your account",
         html: htmlContent,
-        text: 'Welcome'
+        text: "Welcome",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -974,11 +974,11 @@ const otp_messanger = (user, otp) => {
 exports.otp_messanger = otp_messanger;
 const account_deactivation_mail = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -1035,12 +1035,12 @@ const account_deactivation_mail = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Account Deactivated",
         html: htmlContent,
-        text: 'Account Deactivated'
+        text: "Account Deactivated",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -1054,11 +1054,11 @@ const account_deactivation_mail = (user) => {
 exports.account_deactivation_mail = account_deactivation_mail;
 const account_activation_mail = (user) => {
     const transporter = nodemailer_1.default.createTransport({
-        service: 'gmail',
+        service: "gmail",
         auth: {
             user: constants_1.email_username,
-            pass: constants_1.email_passowrd
-        }
+            pass: constants_1.email_passowrd,
+        },
     });
     const htmlContent = `
         <!DOCTYPE html>
@@ -1120,12 +1120,12 @@ const account_activation_mail = (user) => {
     const mailOptions = {
         from: {
             name: "Credit Mend",
-            address: 'support@creditmend.com'
+            address: "support@creditmend.com",
         },
         to: user.email,
         subject: "Credit Mend: Account Activated",
         html: htmlContent,
-        text: 'Account Activated'
+        text: "Account Activated",
     };
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
